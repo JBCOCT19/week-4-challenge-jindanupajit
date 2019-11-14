@@ -170,6 +170,13 @@ public class Main {
     private static void addFaculty() {
         Faculty faculty = new Faculty(Console.getPersonInformation());
 
+        Optional<Person> duplicate = facultyQuery.findByEmail(faculty.getEmail());
+        if (duplicate.isPresent()) {
+            System.out.println("Duplicated entry found (same email)");
+            viewFaculty(duplicate.get().getId());
+            return;
+        }
+
         faculty.setId(Faculty.getAutoId());
         facultyDatabase.add(faculty);
 
@@ -188,6 +195,16 @@ public class Main {
         }
 
         Faculty faculty = new Faculty(Console.getPersonInformation(current.get()));
+
+        if (!faculty.getEmail().equalsIgnoreCase(current.get().getEmail())) {
+            Optional<Person> duplicate = facultyQuery.findByEmail(faculty.getEmail());
+            if (duplicate.isPresent()) {
+                System.out.println("Duplicated entry found (same email)");
+                viewFaculty(duplicate.get().getId());
+                return;
+            }
+        }
+
         faculty.setId(current.get().getId());
 
         current.get().importValue(faculty);
@@ -206,6 +223,12 @@ public class Main {
     private static void addStudent() {
         Student student = new Student(Console.getPersonInformation());
 
+        Optional<Person> duplicate = studentQuery.findByEmail(student.getEmail());
+        if (duplicate.isPresent()) {
+            System.out.println("Duplicated entry found (same email)");
+            viewStudent(duplicate.get().getId());
+            return;
+        }
         student.setId(Student.getAutoId());
         studentDatabase.add(student);
         viewStudent(student.getId());
@@ -223,6 +246,17 @@ public class Main {
         }
 
         Student student = new Student(Console.getPersonInformation(current.get()));
+
+        if (!student.getEmail().equalsIgnoreCase(current.get().getEmail())) {
+            Optional<Person> duplicate = studentQuery.findByEmail(student.getEmail());
+            if (duplicate.isPresent()) {
+                System.out.println("Duplicated entry found (same email)");
+                viewStudent(duplicate.get().getId());
+                return;
+            }
+        }
+
+
         student.setId(current.get().getId());
 
         current.get().importValue(student);
@@ -318,6 +352,12 @@ public class Main {
             System.out.println("Invalid course id\n");
             return;
         }
+        Optional<PersonCourseRelation> duplicate = enrollmentQuery.findByRelation(studentId, courseId);
+        if (duplicate.isPresent()) {
+            System.out.println("Duplicated entry found");
+            viewEnrollment(duplicate.get().getId());
+            return;
+        }
 
         String date = ask("Date of enrollment [%s] : ", (new Date()).toString());
 
@@ -374,6 +414,13 @@ public class Main {
 
         if (!course.isPresent()) {
             System.out.println("Invalid course id\n");
+            return;
+        }
+
+        Optional<PersonCourseRelation> duplicate = facultyAssignmentQuery.findByRelation(facultyId, courseId);
+        if (duplicate.isPresent()) {
+            System.out.println("Duplicated entry found");
+            viewFacultyAssignment(duplicate.get().getId());
             return;
         }
 

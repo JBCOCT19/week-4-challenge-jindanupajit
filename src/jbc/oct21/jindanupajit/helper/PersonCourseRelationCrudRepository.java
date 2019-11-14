@@ -21,4 +21,13 @@ public class PersonCourseRelationCrudRepository {
 
         return Optional.empty();
     }
+
+    public Optional<PersonCourseRelation> findByRelation(long personId, long courseId) {
+        for (PersonCourseRelation record : database) {
+            if ((record.getPerson() == personId)&&(record.getCourse() == courseId))
+                return Optional.of(record);
+        }
+
+        return Optional.empty();
+    }
 }

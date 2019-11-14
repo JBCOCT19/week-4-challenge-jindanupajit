@@ -101,7 +101,7 @@ public class Console {
             current = new Person(person);
 
         String name = ask("  Name [%s] : ", current.getName());
-        String email = ask("  Email [%s] : ", current.getEmail());
+        String email = ask("  Email [%s] : ", current.getEmail()).toLowerCase();
         String password = ask("  Password [%s] : ", current.getPassword());
 
         return new Person(0, name, email, password);

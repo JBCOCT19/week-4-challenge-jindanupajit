@@ -2,20 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b34c01e5-2281-4ca1-b8e3-7b2b2a95b3c7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/AutoIncrement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/Console.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/CourseCrudRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/PersonCourseRelationCrudRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/PersonCrudRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/model/Admin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/model/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/model/Faculty.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/model/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/model/PersonCourseRelation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/model/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/Console.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/PersonCourseRelationCrudRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/PersonCourseRelationCrudRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/PersonCrudRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/PersonCrudRepository.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +72,7 @@
       <option name="presentableId" value="Default" />
       <updated>1573739600929</updated>
       <workItem from="1573739608669" duration="21956000" />
+      <workItem from="1573763165811" duration="1454000" />
     </task>
     <servers />
   </component>
@@ -92,7 +84,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

@@ -24,7 +24,7 @@ public class PersonCrudRepository {
 
     public Optional<Person> findByName(String name) {
         for (Person record : database) {
-            if (record.getName() == name)
+            if (record.getName().equals(name))
                 return Optional.of(record);
         }
 
@@ -33,7 +33,7 @@ public class PersonCrudRepository {
 
     public Optional<Person> findByEmail(String email) {
         for (Person record : database) {
-            if (record.getEmail() == email)
+            if (record.getEmail().equals(email))
                 return Optional.of(record);
         }
 
