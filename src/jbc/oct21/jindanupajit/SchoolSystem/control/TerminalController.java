@@ -32,20 +32,18 @@ public class TerminalController implements Runnable {
 
     private Terminal terminal;
 
+    private static  boolean databaseAdded = false;
+
     public TerminalController(Terminal terminal) {
         this.terminal = terminal;
     }
 
-    public void run() {
-
-
-        terminal.init();
-
-        terminal.greeting();
-
+    synchronized private void addDatabase() {
+        if (databaseAdded)
+            return;
         adminDatabase.add(new Admin(AutoIncrement.getAdminId(),"Krissada", "admin@gmail.com","password"));
         facultyDatabase.add(new Faculty(AutoIncrement.getFacultyId(),"Faculty 1", "faculty@gmail.com","password"));
-        studentDatabase.add(new Student(AutoIncrement.getAdminId(),"Student 1", "student@gmail.com","password"));
+        studentDatabase.add(new Student(AutoIncrement.getStudentId(),"Student 1", "student@gmail.com","password"));
 
         courseDatabase.add(new Course(AutoIncrement.getCourseId(), "java101", "Basic Java"));
         courseDatabase.add(new Course(AutoIncrement.getCourseId(), "java102", "Java Boot Camp"));
@@ -53,6 +51,18 @@ public class TerminalController implements Runnable {
         enrollmentDatabase.add(new PersonCourseRelation(AutoIncrement.getEnrollmentId(), 1, 1, (new Date()).toString()));
 
         facultyAssignmentDatabase.add(new PersonCourseRelation(AutoIncrement.getFacultyAssignmentId(), 1, 2));
+        databaseAdded = true;
+    }
+
+    public void run() {
+
+            addDatabase();
+
+        terminal.init();
+
+        terminal.greeting();
+
+
 
         start:
         while(true) {
