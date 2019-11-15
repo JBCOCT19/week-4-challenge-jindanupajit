@@ -6,6 +6,8 @@ import jbc.oct21.jindanupajit.SchoolSystem.model.Person;
 import jbc.oct21.jindanupajit.SchoolSystem.util.PersonFinder;
 
 import java.io.*;
+import java.net.InetAddress;
+import java.net.UnknownHostException;
 import java.util.Optional;
 import java.util.Scanner;
 
@@ -36,8 +38,14 @@ public class Terminal {
     }
 
     public   void greeting() {
+        String ipAddress = "0.0.0.0";
+        try {
+            InetAddress inetAddress = InetAddress.getLocalHost();
+            ipAddress = inetAddress.getHostAddress();
+        } catch (UnknownHostException e) {
 
-       println("Welcome to Coding 's School System\n");
+        }
+        println("Welcome to Coding 's School System\n");
 
         println("Instruction: \n" +
                 "  when you see a prompt like\n\n" +
@@ -45,8 +53,20 @@ public class Terminal {
                 "  you can hit enter for 'default' value " +
                 "  in this case, it will return 'default@email.com' \n" +
                 "  as an input value\n" +
-                "  or you can enter a new value.\n\n");
+                "  or you can enter a new value.\n\n" +
+                "You can 'telnet "+ipAddress+" 8823' to access remotely\n\n");
     }
+
+
+    synchronized  private String getLine() {
+        String input = scanner.nextLine();
+        if (inputStream != System.in) {
+            println("");
+            return input;
+        }
+        return input.trim();
+    }
+
     /**
      * Resolve race condition between System.out and System.err
      * @param stream toPrint
@@ -55,6 +75,11 @@ public class Terminal {
     synchronized private void printOutOrError(OutputStream stream, Object messageObject)  {
 
         String message = messageObject.toString();
+        if ((stream == System.out)||(stream == System.err)) {
+            ((PrintStream) stream).print(message);
+            return;
+        }
+
 
         BufferedWriter bufferedWriter=new BufferedWriter(new OutputStreamWriter(stream),1);
         try {
@@ -71,6 +96,7 @@ public class Terminal {
 
         } catch (IOException e) {
             e.printStackTrace();
+
         }
 
     }
@@ -98,13 +124,12 @@ public class Terminal {
     public   String ask(String prompt, String current)  {
         if (current == null) {
             print(prompt);
-            String input = scanner.nextLine().trim();
-            //TODO: HERE!!!!
-            inputStream.available()
+            String input = getLine();
+            return input.trim();
         }
 
         print(String.format(prompt, current));
-        String input = scanner.nextLine();
+        String input = getLine();
 
         if (input.equals(""))
             return current.trim();
@@ -122,7 +147,7 @@ public class Terminal {
                 case "no":
                     return false;
                 default:
-                    System.out.println("Please answer 'yes' or 'no'.\n");
+                    println("Please answer 'yes' or 'no'.\n");
             }
         }
     }
@@ -137,8 +162,9 @@ public class Terminal {
     }
 
     public   String menuAdmin() {
-       String input =
-       ask(String.format("\nOptions:\n" +
+        while(true) {
+            String input =
+            ask(String.format("\nOptions:\n" +
                 "  1 - Add Student\n" +
                 "  2 - Add Faculty\n" +
                 "  3 - Edit Student\n" +
@@ -149,7 +175,7 @@ public class Terminal {
                 "  8 - Assign Faculty\n" +
                 "  9 - View All Information\n\n" +
                 "  Q - Quit\n%s as %s> ",currentUser.getName(),currentUser.getClass().getSimpleName()));
-       while(true) {
+
            switch (input.toLowerCase()) {
                case "1":
                case "2":
@@ -166,6 +192,7 @@ public class Terminal {
                    return "q";
                default:
                    println("Not the right choice, try again\n\n");
+
            }
        }
     }
