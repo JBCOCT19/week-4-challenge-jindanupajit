@@ -1,4 +1,4 @@
-package jbc.oct21.jindanupajit.helper;
+package jbc.oct21.jindanupajit.SchoolSystem.util;
 
 public class AutoIncrement {
     private static long personId = 0;

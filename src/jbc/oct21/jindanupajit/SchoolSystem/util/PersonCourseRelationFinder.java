@@ -1,20 +1,19 @@
-package jbc.oct21.jindanupajit.helper;
+package jbc.oct21.jindanupajit.SchoolSystem.util;
 
-import jbc.oct21.jindanupajit.model.Course;
-import jbc.oct21.jindanupajit.model.PersonCourseRelation;
+import jbc.oct21.jindanupajit.SchoolSystem.model.PersonCourseRelation;
 
 import java.util.List;
 import java.util.Optional;
 
-public class PersonCourseRelationCrudRepository {
-    private List<? extends PersonCourseRelation> database = null;
+public class PersonCourseRelationFinder extends Finder<PersonCourseRelation> {
 
-    public PersonCourseRelationCrudRepository(List<? extends PersonCourseRelation> database) {
-        this.database = database;
+
+    public PersonCourseRelationFinder(List<? extends PersonCourseRelation> database) {
+        super(database);
     }
 
     public Optional<PersonCourseRelation> findById(long id) {
-        for (PersonCourseRelation record : database) {
+        for (PersonCourseRelation record : super.getDatabase()) {
             if (record.getId() == id)
                 return Optional.of(record);
         }
@@ -23,7 +22,7 @@ public class PersonCourseRelationCrudRepository {
     }
 
     public Optional<PersonCourseRelation> findByRelation(long personId, long courseId) {
-        for (PersonCourseRelation record : database) {
+        for (PersonCourseRelation record : super.getDatabase()) {
             if ((record.getPerson() == personId)&&(record.getCourse() == courseId))
                 return Optional.of(record);
         }

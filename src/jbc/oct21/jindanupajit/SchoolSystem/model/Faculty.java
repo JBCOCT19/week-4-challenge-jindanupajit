@@ -1,6 +1,4 @@
-package jbc.oct21.jindanupajit.model;
-
-import jbc.oct21.jindanupajit.helper.AutoIncrement;
+package jbc.oct21.jindanupajit.SchoolSystem.model;
 
 public class Faculty extends Person {
     public Faculty() {
@@ -12,10 +10,6 @@ public class Faculty extends Person {
 
     public Faculty(long id, String name, String email, String password) {
         super(id, name, email, password);
-    }
-
-    public static long getAutoId() {
-        return AutoIncrement.getFacultyId();
     }
 
     @Override

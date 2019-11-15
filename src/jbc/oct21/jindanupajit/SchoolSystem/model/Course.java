@@ -1,6 +1,4 @@
-package jbc.oct21.jindanupajit.model;
-
-import jbc.oct21.jindanupajit.helper.AutoIncrement;
+package jbc.oct21.jindanupajit.SchoolSystem.model;
 
 public class Course {
     private long id;
@@ -49,11 +47,6 @@ public class Course {
         this.name = course.name;
         this.description = course.description;
     }
-    public static long getAutoId() {
-        return AutoIncrement.getCourseId();
-    }
-
-
 
     @Override
     public String toString() {

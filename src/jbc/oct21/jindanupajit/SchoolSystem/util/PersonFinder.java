@@ -1,20 +1,18 @@
-package jbc.oct21.jindanupajit.helper;
+package jbc.oct21.jindanupajit.SchoolSystem.util;
 
-import com.sun.istack.internal.NotNull;
-import jbc.oct21.jindanupajit.model.Person;
+import jbc.oct21.jindanupajit.SchoolSystem.model.Person;
 
 import java.util.List;
 import java.util.Optional;
 
-public class PersonCrudRepository {
-    private List<? extends Person> database = null;
+public class PersonFinder extends Finder<Person> {
 
-    public PersonCrudRepository(@NotNull List<? extends Person> database) {
-        this.database = database;
+    public PersonFinder(List<? extends Person> database) {
+        super(database);
     }
 
     public Optional<Person> findById(long id) {
-        for (Person record : database) {
+        for (Person record : super.getDatabase()) {
             if (record.getId() == id)
                 return Optional.of(record);
         }
@@ -23,7 +21,7 @@ public class PersonCrudRepository {
     }
 
     public Optional<Person> findByName(String name) {
-        for (Person record : database) {
+        for (Person record : super.getDatabase()) {
             if (record.getName().equals(name))
                 return Optional.of(record);
         }
@@ -32,7 +30,7 @@ public class PersonCrudRepository {
     }
 
     public Optional<Person> findByEmail(String email) {
-        for (Person record : database) {
+        for (Person record : super.getDatabase()) {
             if (record.getEmail().equals(email))
                 return Optional.of(record);
         }
@@ -41,7 +39,7 @@ public class PersonCrudRepository {
     }
 
     public Optional<Person> findByCredential(String email, String password ) {
-        for (Person record : database) {
+        for (Person record : super.getDatabase()) {
             if (record.getEmail().equals(email)) {
                 if (record.getPassword().equals(password))
                     return Optional.of(record);
@@ -53,7 +51,4 @@ public class PersonCrudRepository {
         return Optional.empty();
     }
 
-    public List<? extends Person> getDatabase() {
-        return database;
-    }
 }

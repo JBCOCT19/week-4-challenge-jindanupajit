@@ -1,6 +1,4 @@
-package jbc.oct21.jindanupajit.model;
-
-import jbc.oct21.jindanupajit.helper.AutoIncrement;
+package jbc.oct21.jindanupajit.SchoolSystem.model;
 
 public class PersonCourseRelation {
     private long id;
@@ -68,12 +66,7 @@ public class PersonCourseRelation {
         this.course = personCourseRelation.course;
         this.data = personCourseRelation.data;
     }
-
-    public static long getAutoId() {
-        return AutoIncrement.getPersonCourseRelationId();
-    }
-
-    @Override
+   @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("PersonCourseRelation ");
         sb.append("id=").append(id);

@@ -1,7 +1,5 @@
-package jbc.oct21.jindanupajit.model;
+package jbc.oct21.jindanupajit.SchoolSystem.model;
 
-
-import jbc.oct21.jindanupajit.helper.AutoIncrement;
 
 public class Person {
     private long id = 0;
@@ -63,10 +61,6 @@ public class Person {
         this.name = person.name;
         this.email = person.email;
         this.password = person.password;
-    }
-
-    public static long getAutoId() {
-        return AutoIncrement.getPersonId();
     }
 
     @Override

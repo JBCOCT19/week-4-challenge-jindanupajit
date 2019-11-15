@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b34c01e5-2281-4ca1-b8e3-7b2b2a95b3c7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/SchoolSystemApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/control/TelnetController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/util/Finder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/Console.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/PersonCourseRelationCrudRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/PersonCourseRelationCrudRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/PersonCrudRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/PersonCrudRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/control/TerminalController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/AutoIncrement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/util/AutoIncrement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/Console.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/view/Terminal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/CourseCrudRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/util/CourseFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/PersonCourseRelationCrudRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/util/PersonCourseRelationFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/helper/PersonCrudRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/util/PersonFinder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/model/Admin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/model/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/model/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/model/Faculty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/model/Faculty.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/model/Person.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/model/PersonCourseRelation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/model/PersonCourseRelation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/model/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/jbc/oct21/jindanupajit/SchoolSystem/model/Student.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,9 +55,9 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.SchoolSystemApplication">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
-      <option name="MAIN_CLASS_NAME" value="jbc.oct21.jindanupajit.Main" />
+      <option name="MAIN_CLASS_NAME" value="jbc.oct21.jindanupajit.MainController" />
       <module name="SchoolSystem" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
@@ -55,8 +66,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SchoolSystemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="jbc.oct21.jindanupajit.SchoolSystem.SchoolSystemApplication" />
+      <module name="SchoolSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="jbc.oct21.jindanupajit.SchoolSystem.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.SchoolSystemApplication" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -73,6 +98,7 @@
       <updated>1573739600929</updated>
       <workItem from="1573739608669" duration="21956000" />
       <workItem from="1573763165811" duration="1454000" />
+      <workItem from="1573785189497" duration="12492000" />
     </task>
     <servers />
   </component>
